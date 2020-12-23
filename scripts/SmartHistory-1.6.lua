@@ -82,7 +82,7 @@ mp.register_event('end-file', function()
 	end
 
 	if (filePath ~= nil) then
-		historyLogAdd:write(('[%s] %s\n'):format(os.date('%d/%b/%y %X'), filePath..' |time='..tostring(seconds)))
+		historyLogAdd:write(('%s;%s\n'):format(os.date('%d/%m/%Y %H:%M'), filePath..';'..tostring(seconds)))
 		timer:kill()
 		seconds = 0
 		time = 0
